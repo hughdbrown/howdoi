@@ -20,8 +20,9 @@ from pygments.lexers import guess_lexer
 from pygments.formatters import TerminalFormatter
 
 
-GOOGLE_SEARCH_URL = "https://www.google.com/search?q=site:stackoverflow.com%20{0}"
-DUCK_SEARCH_URL = "http://duckduckgo.com/html?q=site%3Astackoverflow.com%20{0}"
+SITE_SUFFIX = "q=site:stackoverflow.com%20{0}"
+GOOGLE_SEARCH_URL = "https://www.google.com/search?" + SITE_SUFFIX
+DUCK_SEARCH_URL = "http://duckduckgo.com/html?" + SITE_SUFFIX
 USER_AGENT = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_2) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1309.0 Safari/537.17"
 
 def get_result(url):
