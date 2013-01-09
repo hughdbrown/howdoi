@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+# -*- coding: utf-8 -*-
 
 ##################################################
 #
@@ -44,11 +45,9 @@ def get_google_links(query):
 #    return links
 
 def get_link_at_pos(links, pos):
-    count_down = list(reversed(range(int(pos))))
-    for pos, link in zip(count_down, links):
-        if is_question(link) and not pos:
-            break
-    return link
+    questions = [link for link in links if is_question(link)]
+    pos = min(int(pos), len(questions))
+    return questions[pos - 1]
 
 def get_instructions(args):
     links = get_google_links(args['query'])
