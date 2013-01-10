@@ -30,7 +30,7 @@ def get_result(url):
     return r.text
 
 def is_question(link):
-    return re.search('questions/\d+/', link)
+    return re.search(r'questions/\d+/', link)
 
 def get_google_links(query):
     url = GOOGLE_SEARCH_URL.format(quote(query))
